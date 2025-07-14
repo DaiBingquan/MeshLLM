@@ -1,0 +1,8 @@
+@misc{lyu2024getmesh,
+      title={GetMesh: A Controllable Model for High-quality Mesh Generation and Manipulation}, 
+      author={Zhaoyang Lyu and Ben Fei and Jinyi Wang and Xudong Xu and Ya Zhang and Weidong Yang and Bo Dai},
+      year={2024},
+      eprint={2403.11990},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}
