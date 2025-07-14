@@ -1,0 +1,594 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript">google.load("jquery", "1.3.2");</script>
+
+<style type="text/css">
+body {
+    font-family: "Titillium Web", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
+    font-size: 17px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 980px;
+}
+h1 {
+    font-weight:300;
+    line-height: 1.15em;
+}
+
+h2 {
+    font-size: 1.75em;
+}
+a:link,a:visited {
+    color: #1367a7;
+    text-decoration: none;
+}
+a:hover {
+    color: #208799;
+}
+h1, h2, h3 {
+    text-align: center;
+}
+h1 {
+    font-size: 40px;
+    font-weight: 500;
+}
+h2 {
+    font-weight: 400;
+    margin: 16px 0px 4px 0px;
+}
+.paper-title {
+    padding: 16px 0px 16px 0px;
+}
+section {
+    margin: 32px 0px 32px 0px;
+    text-align: justify;
+    clear: both;
+}
+.col-6 {
+     width: 16.6%;
+     float: left;
+}
+.col-5 {
+     width: 20%;
+     float: left;
+}
+.col-4 {
+     width: 25%;
+     float: left;
+}
+.col-3 {
+     width: 33%;
+     float: left;
+}
+.col-2 {
+     width: 50%;
+     float: left;
+}
+.row, .author-row, .affil-row {
+     overflow: auto;
+}
+.author-row, .affil-row {
+    font-size: 20px;
+}
+.row {
+    margin: 16px 0px 16px 0px;
+}
+.authors {
+    font-size: 18px;
+}
+.affil-row {
+    margin-top: 16px;
+}
+.teaser {
+    max-width: 100%;
+}
+.text-center {
+    text-align: center;  
+}
+.screenshot {
+    width: 256px;
+    border: 1px solid #ddd;
+}
+.screenshot-el {
+    margin-bottom: 16px;
+}
+hr {
+    height: 1px;
+    border: 0; 
+    border-top: 1px solid #ddd;
+    margin: 0;
+}
+.material-icons {
+    vertical-align: -6px;
+}
+p {
+    line-height: 1.25em;
+}
+.caption {
+    font-size: 16px;
+    /*font-style: italic;*/
+    color: #666;
+    text-align: left;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+video {
+    display: block;
+    margin: auto;
+}
+figure {
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#bibtex pre {
+    font-size: 14px;
+    background-color: #eee;
+    padding: 16px;
+}
+.blue {
+    color: #2c82c9;
+    font-weight: bold;
+}
+.orange {
+    color: #d35400;
+    font-weight: bold;
+}
+.flex-row {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.paper-btn {
+  position: relative;
+  text-align: center;
+
+  display: inline-block;
+  margin: 8px;
+  padding: 8px 8px;
+
+  border-width: 0;
+  outline: none;
+  border-radius: 2px;
+  
+  background-color: #1367a7;
+  color: #ecf0f1 !important;
+  font-size: 20px;
+  width: 100px;
+  font-weight: 600;
+}
+
+.supp-btn {
+  position: relative;
+  text-align: center;
+
+  display: inline-block;
+  margin: 8px;
+  padding: 8px 8px;
+
+  border-width: 0;
+  outline: none;
+  border-radius: 2px;
+  
+  background-color: #1367a7;
+  color: #ecf0f1 !important;
+  font-size: 20px;
+  width: 150px;
+  font-weight: 600;
+}
+
+.paper-btn-parent {
+    display: flex;
+    justify-content: center;
+    margin: 16px 0px;
+}
+.paper-btn:hover {
+    opacity: 0.85;
+}
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.venue {
+    color: #1367a7;
+}
+
+
+
+.topnav {
+  overflow: hidden;
+  background-color: #EEEEEE;
+}
+
+.topnav a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+
+
+</style>
+
+
+<div class="topnav" id="myTopnav">
+  <a href="https://www.shlab.org.cn/"><img width="30%" src="assets/pjlab.png"></a>
+  <a href="https://www.shlab.org.cn/" ><strong>Shanghai AI Laboratory</strong></a>
+</div>
+
+<!-- End : Google Analytics Code -->
+<script type="text/javascript" src="../js/hidebib.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,600,400italic,600italic,300,300italic' rel='stylesheet' type='text/css'>
+<head>
+    <title>MeshLLM: LLM-Powered Structured Mesh Code Generation from Point Clouds</title>
+    <meta property="og:description" content="MeshLLM: LLM-Powered Structured Mesh Code Generation from Point Clouds"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+</head>
+
+
+
+ <body>
+<style>
+    .caption {
+        text-align: center; /* 让文本居中 */
+        /* 可以添加更多样式来美化文本 */
+    }
+</style>
+<div class="container">
+    <div class="paper-title">
+        <h1>MeshLLM: LLM-Powered Structured Mesh Code Generation from Point Clouds</h1>
+    </div>
+
+    
+    <div id="authors">
+        <div class="author-row">
+            <div class="col-4 text-center">Bingquan Dai<sup>*1,2</sup></div>
+            <div class="col-4 text-center">Li Ray Luo<sup>*1</sup></div>
+            <div class="col-4 text-center">Qihong Tang<sup>1</sup></div>
+            <div class="col-4 text-center">Jie Wang<sup>1</sup></div>
+            <div class="col-4 text-center">Xinyu Lian<sup>1</sup></div>
+            <div class="col-4 text-center">Hao Xu<sup>1</sup></div>
+            <div class="col-4 text-center">Minghan Qin<sup>2</sup></div>
+            <div class="col-4 text-center">Xudong Xu<sup>1</sup></div>
+            <div class="col-4 text-center">Bo Dai<sup>1</sup></div>
+            <div class="col-4 text-center">Haoqian Wang<sup>†2</sup></div>
+            <div class="col-4 text-center">Zhaoyang Lyu<sup>†1</sup></div>
+            <div class="col-4 text-center">Jiangmiao Pang<sup>1</sup></div>
+        </div>
+        
+        <div class="affil-row">
+            <div class="col-3 text-center"><sup>1</sup>Shanghai Artificial Intelligence Laboratory, Shanghai, China</div>
+            <div class="col-3 text-center"><sup>2</sup>Tsinghua University, Beijing, China</div>
+        </div>
+        
+        <!-- <div class="affil-row">
+            <div class="venue text-center"><b>Under review</b></div>
+        </div> -->
+
+        <div style="clear: both">
+            <div class="paper-btn-parent">
+            <a class="supp-btn" href="https://arxiv.org/abs/2403.11990">
+                <span class="material-icons"> description </span> 
+                 Paper
+            </a>
+            <!-- <a class="supp-btn" href="assets/appendix.pdf">
+                <span class="material-icons"> description </span> 
+                    Appendix
+            </a> -->
+
+            <a class="supp-btn" href="assets/bib.txt">
+                <span class="material-icons"> description </span> 
+                  BibTeX
+            </a>
+            <a class="supp-btn" href="https://github.com/ZhaoyangLyu/GetMesh">
+                <span class="material-icons"> description </span> 
+                  Code
+            </a>
+        </div></div>
+    </div>
+
+    <section id="pipeline">
+        <figure style="width: 100%;">
+            <a href="assets/teaser.png">
+                <img width="100%" src="assets/teaser.png">
+            </a>
+            <p class="caption" style="margin-bottom: 1px;  text-align: justify">
+                MeshLLM can predict codes and reconstruct 40 categories of objects.
+            </p>
+        </figure>
+
+        <!-- 中间新加一张图 -->
+        <figure style="width: 100%;">
+            <a href="assets/teaser_2_2.jpg">
+                <img width="100%" src="assets/teaser_2_2.jpg">
+            </a>
+            <p class="caption" style="margin-bottom: 1px; text-align: justify">
+                MeshLLM takes in point clouds and produces part-segmented meshes by executing the predicted code in Blender.
+                For the dishwasher, we apply transparency to the foremost part to showcase the internal structure.
+            </p>
+        </figure>
+        
+        <br>
+            <figure style="width: 100%;">
+                <a href="assets/pipline.png">
+                    <img width="100%" src="assets/pipline.png">
+                </a>
+                <p class="caption" style="margin-bottom: 1px;  text-align: justify">
+                    Overview of MeshLLM. The input point cloud is first encoded into shape tokens via a shape tokenizer. These tokens are then fed into a large language model (LLM), which autoregressively generates executable code representing part-based 3D structures. The decoded code specifies object's name, part identities and names, enabling interpretable and modular reconstruction.
+                </p>
+            </figure>
+            
+            
+        
+    </section>
+
+    <section id="abstract">
+        <h2>Abstract</h2>
+        <hr>
+        <p>
+            Reconstructing 3D objects into editable programs is pivotal for applications like reverse engineering and shape editing.
+            However, existing methods often rely on limited domain-specific languages (DSLs) and small-scale datasets, restricting their ability to model complex geometries and structures.
+            To address these challenges, we introduce <strong>MeshLLM</strong>, a novel framework that reconstructs complex 3D objects from point clouds into editable Blender Python scripts.
+            We develop a comprehensive set of expressive Blender Python APIs capable of synthesizing intricate geometries.
+            Leveraging these APIs, we construct a large-scale paired object-code dataset, where the code for each object is decomposed into distinct semantic parts.
+            Subsequently, we train a multimodal large language model (LLM) that translates 3D point clouds into executable Blender Python scripts.
+            Our approach not only achieves superior performance in shape-to-code reconstruction tasks but also facilitates intuitive geometric and topological editing through convenient code modifications.
+            Furthermore, our code-based representation enhances the reasoning capabilities of LLMs in 3D shape understanding tasks.
+            Together, these contributions establish <strong>MeshLLM</strong> as a powerful and flexible solution for programmatic 3D shape reconstruction and understanding.
+        </p>
+    </section>
+
+    <section id="paper">
+        <h2>Paper</h2>
+        <hr>
+        <div class="flex-row">
+            <div style="box-sizing: border-box; padding: 16px; margin: auto;">
+                <a href="assets/paper.pdf"><img class="screenshot" src="assets/SLIDE_paper_figure.png"></a>
+            </div>
+            <div style="width: 50%">
+                <p><b>GetMesh: A Controllable Model for High-quality Mesh Generation and Manipulation</b></p>
+                <p>Zhaoyang Lyu*, Ben Fei*, Jinyi Wang*, Xudong Xu, Ya Zhang, Weidong Yang, Bo Dai</p>
+                <div><span class="material-icons"> description </span><a href="assets/paper.pdf"> PDF</a></div>
+                <!-- <div><span class="material-icons"> description </span><a href="assets/appendix.pdf"> Appendix</a></div> -->
+                <div><span class="material-icons"> description </span><a href="https://arxiv.org/abs/2403.11990"> arXiv version</a></div>
+                <div><span class="material-icons"> insert_comment </span><a href="assets/bib.txt"> BibTeX</a></div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="results">
+
+        <!-- <h2>Generated 3D Assets</h2>
+        <hr>
+
+        <figure style="width: 100%;">
+             <video class="centered" width="90%" controls muted loop autoplay>
+                <source src="assets/mesh_kps_rotate.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <p class="caption" style="margin-bottom: 1px; text-align: justify">
+                Meshes and corresponding points and sparse latent points generated by SLIDE with different shapes.
+
+            </p>
+        </figure> -->
+        
+        <h2>GIF Gallery</h2>
+        <p style="text-align: center;">GetMesh generates the geometry and then <a href="https://sheldontsui.github.io/projects/Matlaber">MATLABER</a> generates the materials.</p>
+
+        <hr>
+
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); grid-gap: 20px;">
+            <!-- 第1个GIF -->
+            <figure>
+                <img src="assets/360_view_of_generated_meshes_with_materials/1.gif" alt="GIF 1" style="width: 100%;">
+                <figcaption class="caption">A helmet</figcaption>
+            </figure>
+
+            <!-- 第2个GIF -->
+            <figure>
+                <img src="assets/360_view_of_generated_meshes_with_materials/2.gif" alt="GIF 2" style="width: 100%;">
+                <figcaption class="caption">A lamp</figcaption>
+            </figure>
+
+            <!-- 第3个GIF -->
+            <figure>
+                <img src="assets/360_view_of_generated_meshes_with_materials/3.gif" alt="GIF 3" style="width: 100%;">
+                <figcaption class="caption">A bowl</figcaption>
+            </figure>
+            
+            <!-- 第4个GIF -->
+            <figure>
+                <img src="assets/360_view_of_generated_meshes_with_materials/4.gif" alt="GIF 4" style="width: 100%;">
+                <figcaption class="caption">A train</figcaption>
+            </figure>
+
+            <!-- 第5个GIF -->
+            <figure>
+                <img src="assets/360_view_of_generated_meshes_with_materials/5.gif" alt="GIF 5" style="width: 100%;">
+                <figcaption class="caption">A blue supercar</figcaption>
+            </figure>
+
+            <!-- 第6个GIF -->
+            <figure>
+                <img src="assets/360_view_of_generated_meshes_with_materials/6.gif" alt="GIF 6" style="width: 100%;">
+                <figcaption class="caption">A tower</figcaption>
+            </figure>
+
+            <!-- 第7个GIF -->
+            <figure>
+                <img src="assets/360_view_of_generated_meshes_with_materials/7.gif" alt="GIF 7" style="width: 100%;">
+                <figcaption class="caption">A mailbox with oil paintings of Monet painted on its body</figcaption>
+            </figure>
+
+            <!-- 第8个GIF -->
+            <figure>
+                <img src="assets/360_view_of_generated_meshes_with_materials/8.gif" alt="GIF 8" style="width: 100%;">
+                <figcaption class="caption">A pistol</figcaption>
+            </figure>
+
+            <!-- 第9个GIF -->
+            <figure>
+                <img src="assets/360_view_of_generated_meshes_with_materials/9.gif" alt="GIF 9" style="width: 100%;">
+                <figcaption class="caption">A bookshelf with oil paintings of Pablo Picasso painted on its body</figcaption>
+            </figure>
+
+            <!-- 第10个GIF -->
+            <figure>
+                <img src="assets/360_view_of_generated_meshes_with_materials/10.gif" alt="GIF 10" style="width: 100%;">
+                <figcaption class="caption">A wooden bathtub</figcaption>
+            </figure>
+
+            <!-- 第11个GIF -->
+            <figure>
+                <img src="assets/360_view_of_generated_meshes_with_materials/11.gif" alt="GIF 11" style="width: 100%;">
+                <figcaption class="caption">An airplane with oil paintings of Leonardo da Vinci painted on its body</figcaption>
+            </figure>            
+
+            <!-- 第12个GIF -->
+            <figure>
+                <img src="assets/360_view_of_generated_meshes_with_materials/12.gif" alt="GIF 12" style="width: 100%;">
+                <figcaption class="caption">A car with oil paintings of Van Gogh painted on its body</figcaption>
+            </figure>
+        </div>
+
+        <h2>Point-based Controllable Generation</h2>
+        <hr>
+
+        <p style="text-align: center;">Turning a twin-engine passenger airplane into a four-engine transport airplane.</p>
+        <figure style="width: 100%;">
+             <video class="centered" width="90%" controls muted loop autoplay>
+                <source src="assets/airplane_change.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <!-- <p class="caption" style="margin-bottom: 1px; text-align: justify;">
+                Control the movement of the sparse latent points to change the shape of the airplane.
+                </p> -->
+        </figure>
+
+        <!-- from car to airplane -->
+        <!-- <h2>From car to airplane</h2> -->
+        <hr>
+
+        <p style="text-align: center;">Turning a car into an airplane.</p>
+        <figure style="width: 100%;">
+             <video class="centered" width="90%" controls muted loop autoplay>
+                <source src="assets/car_change.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <!-- <p class="caption" style="margin-bottom: 1px; text-align: justify;">
+                Control the movement of the sparse latent points to change the shape of the car to airplane.
+                </p> -->
+        </figure>
+
+        <h2>Point-based Shape Combination</h2>
+        <hr>
+        <p style="text-align: center;">Combine the wings and tail of an airplane with a car.</p>
+        <figure style="width: 100%;">
+            <video class="centered" width="90%" controls muted loop autoplay>
+               <source src="assets/combine/car_airplane.mp4" type="video/mp4">
+               Your browser does not support the video tag.
+           </video>
+           <!-- <p class="caption" style="margin-bottom: 1px; text-align: justify;">
+               combine of car and airplane.
+               </p> -->
+       </figure>
+       
+       <!-- <h2>Combine of two categories</h2> -->
+        <hr>
+        <p style="text-align: center;">Combine the legs of a chair with a bathtub.</p>
+        <figure style="width: 100%;">
+            <video class="centered" width="90%" controls muted loop autoplay>
+               <source src="assets/combine/bathtub.mp4" type="video/mp4">
+               Your browser does not support the video tag.
+           </video>
+           <!-- <p class="caption" style="margin-bottom: 1px; text-align: justify;">
+               combine of bathtub and chair legs.
+               </p> -->
+       </figure>
+
+       <!-- <h2>Combine of two categories</h2> -->
+        <hr>
+        <p style="text-align: center;">Combine the armrests of a chair with another chair.</p>
+        <figure style="width: 100%;">
+            <video class="centered" width="90%" controls muted loop autoplay>
+               <source src="assets/combine/chair.mp4" type="video/mp4">
+               Your browser does not support the video tag.
+           </video>
+           <!-- <p class="caption" style="margin-bottom: 1px; text-align: justify;">
+                combine of chair and chair arms.
+               </p> -->
+       </figure>
+
+       <!-- <h2>Combine of two categories</h2> -->
+        <hr>
+        <p style="text-align: center;">Combine a lamp with a table.</p>
+        <figure style="width: 100%;">
+            <video class="centered" width="90%" controls muted loop autoplay>
+               <source src="assets/combine/table.mp4" type="video/mp4">
+               Your browser does not support the video tag.
+           </video>
+           <!-- <p class="caption" style="margin-bottom: 1px; text-align: justify;">
+                combine of table and lamp.
+               </p> -->
+       </figure>
+    
+       <h2>More Meshes Generated by GetMesh</h2>
+        <hr>
+        <figure style="width: 100%;">
+            <img class="centered" src="assets/combined_512kps.gif" width="90%">
+            <!-- <p class="caption" style="margin-bottom: 1px; text-align: justify;">
+                More geometry examples of GetMesh generation results.
+                </p> -->
+        </figure>
+
+        <!-- <h2>More examples</h2>
+        <hr>
+        <figure style="width: 100%;">
+            <img class="centered" src="assets/slide_more_examples_demo.png" width="90%">
+            <p class="caption" style="margin-bottom: 1px; text-align: justify;">
+                More examples of SLIDE generation results.
+                </p>
+        </figure> -->
+
+
+    </section>
+    
+
+    <section id="bibtex">
+        <h2>Citation</h2>
+        <hr>
+
+        <pre><code>
+            @misc{lyu2024getmesh,
+                title={GetMesh: A Controllable Model for High-quality Mesh Generation and Manipulation}, 
+                author={Zhaoyang Lyu and Ben Fei and Jinyi Wang and Xudong Xu and Ya Zhang and Weidong Yang and Bo Dai},
+                year={2024},
+                eprint={2403.11990},
+                archivePrefix={arXiv},
+                primaryClass={cs.CV}
+            }
+        </code></pre>
+    </section>
+
+
+
+<br />
+    
+
+</div>
+</body>
+</html>
