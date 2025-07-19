@@ -1,4 +1,3 @@
-
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 
@@ -110,7 +109,6 @@ p {
 }
 .caption {
     font-size: 16px;
-    /*font-style: italic;*/
     color: #666;
     text-align: left;
     margin-top: 8px;
@@ -219,7 +217,67 @@ figure {
   font-size: 16px;
 }
 
+.gif-container {
+    position: relative;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    height: 250px; /* 固定高度 */
+}
 
+.gif-comparison {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.gif-left, .gif-right {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.gif-left img, .gif-right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gif-left {
+    z-index: 10; /* 左侧GIF在分隔线左侧显示 */
+    clip-path: inset(0 50% 0 0); /* 默认显示左侧50% */
+}
+
+.gif-right {
+    z-index: 5;  /* 右侧GIF在分隔线右侧显示 */
+    clip-path: inset(0 0 0 50%); /* 默认显示右侧50% */
+}
+
+.separator {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background-color: white;
+    cursor: ew-resize;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    z-index: 20;
+    left: 50%; /* 默认位置在50%处 */
+}
+
+.gif-caption {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    background: rgba(255,255,255,0.8);
+    padding: 2px 5px;
+    font-size: 14px;
+    color: #333;
+    z-index: 30;
+}
 
 </style>
 
@@ -396,78 +454,87 @@ figure {
 
         <hr>
 
-        <div style="display: grid; grid-template-columns: repeat(4, 1fr); grid-gap: 20px;">
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); grid-gap: 20px;">
             <!-- 第1个GIF -->
-            <figure>
+            <div class="gif-container">
                 <img src="assets/360_view_of_generated_meshes_with_materials/1.gif" alt="GIF 1" style="width: 100%;">
-                <figcaption class="caption">A helmet</figcaption>
-            </figure>
+                <div class="gif-caption">A helmet</div>
+            </div>
 
             <!-- 第2个GIF -->
-            <figure>
+            <div class="gif-container">
                 <img src="assets/360_view_of_generated_meshes_with_materials/2.gif" alt="GIF 2" style="width: 100%;">
-                <figcaption class="caption">A lamp</figcaption>
-            </figure>
+                <div class="gif-caption">A lamp</div>
+            </div>
 
-            <!-- 第3个GIF -->
-            <figure>
-                <img src="assets/360_view_of_generated_meshes_with_materials/3.gif" alt="GIF 3" style="width: 100%;">
-                <figcaption class="caption">A bowl</figcaption>
-            </figure>
-            
-            <!-- 第4个GIF -->
-            <figure>
-                <img src="assets/360_view_of_generated_meshes_with_materials/4.gif" alt="GIF 4" style="width: 100%;">
-                <figcaption class="caption">A train</figcaption>
-            </figure>
+            <!-- 第3、4个GIF合并容器 -->
+            <div class="gif-container">
+                <div class="gif-comparison">
+                    <div class="gif-left">
+                        <img src="assets/360_view_of_generated_meshes_with_materials/3.gif" alt="GIF 3">
+                        <div class="gif-caption">A bowl</div>
+                    </div>
+                    <div class="gif-right">
+                        <img src="assets/360_view_of_generated_meshes_with_materials/4.gif" alt="GIF 4">
+                        <div class="gif-caption">A train</div>
+                    </div>
+                    <div id="separator-1" class="separator"></div>
+                </div>
+            </div>
 
             <!-- 第5个GIF -->
-            <figure>
+            <div class="gif-container">
                 <img src="assets/360_view_of_generated_meshes_with_materials/5.gif" alt="GIF 5" style="width: 100%;">
-                <figcaption class="caption">A blue supercar</figcaption>
-            </figure>
+                <div class="gif-caption">A blue supercar</div>
+            </div>
 
             <!-- 第6个GIF -->
-            <figure>
+            <div class="gif-container">
                 <img src="assets/360_view_of_generated_meshes_with_materials/6.gif" alt="GIF 6" style="width: 100%;">
-                <figcaption class="caption">A tower</figcaption>
-            </figure>
+                <div class="gif-caption">A tower</div>
+            </div>
 
-            <!-- 第7个GIF -->
-            <figure>
-                <img src="assets/360_view_of_generated_meshes_with_materials/7.gif" alt="GIF 7" style="width: 100%;">
-                <figcaption class="caption">A mailbox with oil paintings of Monet painted on its body</figcaption>
-            </figure>
-
-            <!-- 第8个GIF -->
-            <figure>
-                <img src="assets/360_view_of_generated_meshes_with_materials/8.gif" alt="GIF 8" style="width: 100%;">
-                <figcaption class="caption">A pistol</figcaption>
-            </figure>
+            <!-- 第7、8个GIF合并容器 -->
+            <div class="gif-container">
+                <div class="gif-comparison">
+                    <div class="gif-left">
+                        <img src="assets/360_view_of_generated_meshes_with_materials/7.gif" alt="GIF 7">
+                        <div class="gif-caption">A mailbox with oil paintings of Monet</div>
+                    </div>
+                    <div class="gif-right">
+                        <img src="assets/360_view_of_generated_meshes_with_materials/8.gif" alt="GIF 8">
+                        <div class="gif-caption">A pistol</div>
+                    </div>
+                    <div id="separator-2" class="separator"></div>
+                </div>
+            </div>
 
             <!-- 第9个GIF -->
-            <figure>
+            <div class="gif-container">
                 <img src="assets/360_view_of_generated_meshes_with_materials/9.gif" alt="GIF 9" style="width: 100%;">
-                <figcaption class="caption">A bookshelf with oil paintings of Pablo Picasso painted on its body</figcaption>
-            </figure>
+                <div class="gif-caption">A bookshelf with oil paintings of Pablo Picasso</div>
+            </div>
 
             <!-- 第10个GIF -->
-            <figure>
+            <div class="gif-container">
                 <img src="assets/360_view_of_generated_meshes_with_materials/10.gif" alt="GIF 10" style="width: 100%;">
-                <figcaption class="caption">A wooden bathtub</figcaption>
-            </figure>
+                <div class="gif-caption">A wooden bathtub</div>
+            </div>
 
-            <!-- 第11个GIF -->
-            <figure>
-                <img src="assets/360_view_of_generated_meshes_with_materials/11.gif" alt="GIF 11" style="width: 100%;">
-                <figcaption class="caption">An airplane with oil paintings of Leonardo da Vinci painted on its body</figcaption>
-            </figure>            
-
-            <!-- 第12个GIF -->
-            <figure>
-                <img src="assets/360_view_of_generated_meshes_with_materials/12.gif" alt="GIF 12" style="width: 100%;">
-                <figcaption class="caption">A car with oil paintings of Van Gogh painted on its body</figcaption>
-            </figure>
+            <!-- 第11、12个GIF合并容器 -->
+            <div class="gif-container">
+                <div class="gif-comparison">
+                    <div class="gif-left">
+                        <img src="assets/360_view_of_generated_meshes_with_materials/11.gif" alt="GIF 11">
+                        <div class="gif-caption">An airplane with oil paintings of Leonardo da Vinci</div>
+                    </div>
+                    <div class="gif-right">
+                        <img src="assets/360_view_of_generated_meshes_with_materials/12.gif" alt="GIF 12">
+                        <div class="gif-caption">A car with oil paintings of Van Gogh</div>
+                    </div>
+                    <div id="separator-3" class="separator"></div>
+                </div>
+            </div>
         </div>
 
         <h2>Point-based Controllable Generation</h2>
@@ -589,7 +656,52 @@ figure {
         </code></pre>
     </section>
 
-
+    <!-- 添加分隔线拖动功能的JavaScript -->
+    <script>
+        // 为所有分隔线添加拖动功能
+        document.querySelectorAll('.separator').forEach((separator, index) => {
+            const container = separator.closest('.gif-comparison');
+            const leftGif = container.querySelector('.gif-left');
+            const rightGif = container.querySelector('.gif-right');
+            
+            let isDragging = false;
+            
+            // 鼠标按下事件
+            separator.addEventListener('mousedown', (e) => {
+                isDragging = true;
+                document.body.style.cursor = 'ew-resize';
+                e.preventDefault(); // 防止拖动时选中文字
+            });
+            
+            // 鼠标移动事件
+            document.addEventListener('mousemove', (e) => {
+                if (!isDragging) return;
+                
+                const containerRect = container.getBoundingClientRect();
+                const containerWidth = containerRect.width;
+                const mouseX = e.clientX - containerRect.left;
+                
+                // 限制分隔线范围（20px最小宽度，避免过窄）
+                if (mouseX < 20 || mouseX > containerWidth - 20) return;
+                
+                // 计算百分比
+                const percent = (mouseX / containerWidth) * 100;
+                
+                // 移动分隔线位置
+                separator.style.left = `${percent}%`;
+                
+                // 设置左右两侧的clip-path，实现覆盖效果
+                leftGif.style.clipPath = `inset(0 ${100 - percent}% 0 0)`;
+                rightGif.style.clipPath = `inset(0 0 0 ${percent}%)`;
+            });
+            
+            // 鼠标释放事件
+            document.addEventListener('mouseup', () => {
+                isDragging = false;
+                document.body.style.cursor = 'default';
+            });
+        });
+    </script>
 
 <br />
     
